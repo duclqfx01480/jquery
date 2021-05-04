@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Effects - Animate</title>
+
+        <!-- include jQuery from CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- jQuery Script -->
+        <script>
+            $(document).ready(function(){
+                $("button#btnStartAnimation").click(function(){
+                    $("div#box").animate({
+                        left: '250px',
+                        opacity: '0.5',
+                        // height: '+=300px',
+                        height: 'toggle',
+                        // width: '+=300px'
+                        width: 'toggle'
+                    });
+                });
+
+            });
+            
+        </script>
+        <!-- end jQuery Script -->
+
+        <style>
+            #box{
+                background-color: #73AD21;
+                height: 100px;
+                width: 100px;
+                position: absolute;
+                border: 1px solid #ddd;
+            }
+
+            
+
+        </style>
+        <!-- end style -->
+
+    </head>
+
+    <body>
+        <div class="container">
+
+            <button id="btnStartAnimation">Start Animation</button>
+            <div id="box"></div>
+            
+        </div> <!-- end container -->
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Effects - Fade</title>
+
+        <!-- include jQuery from CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- jQuery Script -->
+        <script>
+            $(document).ready(function(){
+                $("button#fadeIn").click(function(){
+                    $("div.box").fadeIn("slow");
+                });
+
+                $("button#fadeOut").click(function(){
+                    $("div.box").fadeOut("slow");
+                });
+
+                $("button#fadeToggle").click(function(){
+                    $("div.box").fadeToggle("slow");
+                });
+
+                $("button#fadeTo").click(function(){
+                    $("div#box1").fadeTo("slow", 0.15);
+                    $("div#box2").fadeTo("slow", 0.4);
+                    $("div#box3").fadeTo("slow", 0.7);
+                });
+
+            });
+            
+        </script>
+
+        <style>
+            .container{
+                width: 1000px;
+                margin: auto;
+            }
+
+            .box{
+                width: 200px;
+                height: 200px;
+                border: 1px solid grey;
+                margin: 10px;
+                display: none;
+            }
+
+            #box1{background-color: lightgreen;}
+            #box2{background-color: lightblue;}
+            #box3{background-color: lightyellow;}
+
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <button id="fadeIn">FadeIn</button>
+            <button id="fadeOut">FadeOut</button>
+            <button id="fadeToggle">FadeToggle</button>
+            <button id="fadeTo">FadeTo</button>
+            <div class="box" id="box1"></div>
+            <div class="box" id="box2"></div>
+            <div class="box" id="box3"></div>
+
+            
+
+        </div> <!-- end container -->
+    </body>
+</html>

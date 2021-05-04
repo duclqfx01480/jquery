@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Effects - Slide</title>
+
+        <!-- include jQuery from CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- jQuery Script -->
+        <script>
+            $(document).ready(function(){
+                $("#flip1").click(function(){
+                    $("#panel1").slideDown("slow");
+                });
+
+                $("#flip2").click(function(){
+                    $("#panel2").slideUp("slow");
+                });
+
+                $("#flip3").click(function(){
+                    $("#panel3").slideToggle("slow");
+                });
+
+
+
+            });
+            
+            
+        </script>
+
+        <style>
+            .container{
+                width: 800px;
+                margin: auto;
+            }
+            #panel1, #flip1{
+                padding: 10px;
+                text-align: center;
+                background-color: #73AD21;
+                color: white;
+                font-size: 24px;
+                border: 1px solid #333;
+            }
+
+            #panel1{
+                padding: 50px;
+                display: none;
+            }
+
+            #panel2, #flip2{
+                padding: 10px;
+                text-align: center;
+                background-color: #73AD21;
+                color: white;
+                font-size: 24px;
+                border: 1px solid #333;
+            }
+
+            #panel2{
+                padding: 50px;
+            }
+
+            #panel3, #flip3{
+                padding: 10px;
+                text-align: center;
+                background-color: #73AD21;
+                color: white;
+                font-size: 24px;
+                border: 1px solid #333;
+            }
+
+            #panel3{
+                padding: 50px;
+            }
+          
+
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div id="flip1">Click to slide down the panel</div>
+            <div id="panel1">Content of the panel</div>
+
+            <br>
+
+            <div id="flip2">Click to slide up the panel</div>
+            <div id="panel2">Content of the panel</div>
+
+            <br>
+
+            <div id="flip3">Click to slide toggle the panel</div>
+            <div id="panel3">Content of the panel</div>
+
+
+            
+
+        </div> <!-- end container -->
+    </body>
+</html>

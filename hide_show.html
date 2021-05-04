@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery - Hide and Show</title>
+
+        <!-- include jQuery from CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- jQuery Script -->
+        <script>
+            $(document).ready(function(){
+                $("button#hide").click(function(){
+                    $("p#content").hide("slow");
+                });
+                
+                $("button#show").click(function(){
+                    $("p#content").show("slow");
+                });
+
+                $("button#toggle").click(function(){
+                    $("p#content").toggle("slow");
+                });
+
+
+            });
+
+        </script>
+    </head>
+
+    <body>
+        <div class="container">
+            <p id="content">This is the paragraph</p>
+
+            <button id="hide">Hide</button>
+            <button id="show">Show</button>
+            <button id="toggle">Toggle</button>
+
+        </div> <!-- end container -->
+    </body>
+</html>

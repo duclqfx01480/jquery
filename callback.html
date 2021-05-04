@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Effects - Callback</title>
+
+        <!-- include jQuery from CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- jQuery Script -->
+        <script>
+            $(document).ready(function(){
+                $("button#hide").click(function(){
+                    $("p").hide("slow", function(){
+                        alert("The paragraph is now hidden");
+                    });
+                });
+
+            });
+            
+        </script>
+        <!-- end jQuery Script -->
+
+        <style>
+            
+
+            
+
+        </style>
+        <!-- end style -->
+
+    </head>
+
+    <body>
+        <div class="container">
+
+            <button id="hide">Hide</button>
+            <p>This is the paragraph</p>
+            
+        </div> <!-- end container -->
+    </body>
+</html>

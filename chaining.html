@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Effects - Chaining</title>
+
+        <!-- include jQuery from CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- jQuery Script -->
+        <script>
+            $(document).ready(function(){
+                $("button#start").click(function(){
+                    $("p#content").css("color", "red").slideUp(2000).slideDown(2000);
+                });
+
+            });
+            
+        </script>
+        <!-- end jQuery Script -->
+
+        <style>
+
+        </style>
+        <!-- end style -->
+
+    </head>
+
+    <body>
+        <div class="container">
+
+            <p id="content">Content</p>
+            <button id="start">Start Animation</button>
+            
+        </div> <!-- end container -->
+    </body>
+</html>

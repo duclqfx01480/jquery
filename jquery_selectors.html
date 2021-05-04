@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery- Selectors</title>
+
+        <!-- include jQuery from CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- jQuery -->
+        <script>
+            $(document).ready(function(){
+                // element selector
+                $("button#hideallp").click(function(){
+                    $("p").hide();
+                });
+
+                // #id selector
+                $("button#hideid").click(function(){
+                    $("#test").hide();
+                });
+
+                $("button#hideclass").click(function(){
+                    $(".hide").hide();
+                });
+            });
+        </script>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <h2>Heading</h2>
+            <p>Paragraph</p>
+            <p>Another Paragraph</p>
+            <p id="test">One more paragraph</p>
+
+            <p class="hide">Paragraph #1</p>
+            <p class="hide">Paragraph #2</p>
+            <p class="hide">Paragraph #3</p>
+
+            <button id="hideallp">Hide all paragraphs</button>
+            <button id="hideid">Hide paragraphs by id</button>
+            <button id="hideclass">Hide paragraph by class</button>
+        </div> <!-- end container -->
+    </body>
+</html>

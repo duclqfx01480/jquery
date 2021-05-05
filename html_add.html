@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML- Add Element</title>
+
+        <!-- include jQuery from CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- jQuery -->
+        <script>
+            function appendText(){
+                var txt1 = "<p>Text.</p>";              // Create text with HTML
+                var txt2 = $("<p></p>").text("Text.");  // Create text with jQuery
+                var txt3 = document.createElement("p"); // Create text with DOM
+                txt3.innerHTML = "Text.";               // Create text with DOM
+
+                $("body").append(txt1, txt2, txt3);     // Append new elements
+            }
+
+            function insertTextBefore(){
+                var txt1 = "<b>Welcome </b>"
+                var txt2 = $("<i></i>").text("to ");
+                var txt3 = document.createElement("b");
+                txt3.innerHTML = "jQuery";
+
+                $("img").before(txt1, txt2, txt3);
+                
+            }
+
+            function insertTextAfter(){
+                var txt1 = "<b>Welcome </b>";
+                var txt2 = $("<i></i>").text("to ");
+                var txt3 = document.createElement("u");
+                txt3.innerHTML = "jQuery";
+
+                $("img").after(txt1, txt2, txt3);
+
+            }
+
+            $(document).ready(function(){
+                $("#btnPrependText").click(function(){
+                    $("p").prepend("<b>Prepended text. </b>");
+                });
+
+                $("#btnPrependListItem").click(function(){
+                    $("ol").prepend("<li>Prepended list item</li>");
+                });
+                
+                $("#btnAppendText").click(function(){
+                    $("p").append("<b> Appended text.</b>");
+                });
+
+                $("#btnAppendListItem").click(function(){
+                    $("ol").append("<li>Appended list item</li>")
+                });
+
+                $("#btnInsertBefore").click(function(){
+                    $("img").before("<b>Before </b>");
+                });
+
+                $("#btnInsertAfter").click(function(){
+                    $("img").after("<i>After </i>");
+                });
+            });
+
+        </script>
+    </head>
+
+    <body>
+        <div class="container">
+            <button id="btnPrependText">Prepend Text</button>
+            <button id="btnPrependListItem">Prepend List Item</button>
+            <br>
+
+            <p>This is a paragraph.</p>
+            <p>This is another paragraph.</p>
+
+            <ol>
+                <li>List item 1</li>
+                <li>List item 2</li>
+                <li>List item 3</li>
+            </ol>
+
+            <button id="btnAppendText">Append Text</button>
+            <button id="btnAppendListItem">Append List Item</button>
+            <button onclick="appendText();">Append 3 lines of text</button>
+
+            <br><br>
+            <img src="https://www.w3schools.com/images/w3jquery.gif" alt="w3schools logo">
+            <br><br>
+            <button id="btnInsertBefore">Insert Text Before Image</button>
+            <button id="btnInsertAfter">Insert Text After Image</button>
+            <br><br>
+            <button onclick="insertTextBefore();">Insert more text before</button>
+            <button onclick="insertTextAfter();">Insert more text after</button>
+
+        </div> <!-- end container -->
+    </body>
+</html>

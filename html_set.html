@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML Set</title>
+
+        <!-- include jQuery from CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- jQuery -->
+        <script>
+            $(document).ready(function(){
+                $("#btn1").click(function(){
+                    $("#p1").text("The text has been changed");
+
+                });
+
+                $("#btn2").click(function(){
+                    $("#p2").html("<b>The text</b> has been <u>changed</u>")
+                });
+
+                $("#btn3").click(function(){
+                    $("#input").val("McLaren");
+                });
+                
+
+
+            });
+
+        </script>
+    </head>
+
+    <body>
+        
+        <div class="container">
+            <p id="p1">This is a paragraph</p>
+            <p id="p2">This is another paragraph</p>
+            <p>Name <input type="text" id="input" value="A name"></p>
+
+            <button type="button" id="btn1">Set Text</button>
+            <button type="button" id="btn2">Set HTML</button>
+            <button type="button" id="btn3">Set Value</button>
+            
+            
+
+        </div> <!-- end container -->
+
+    </body>
+</html>

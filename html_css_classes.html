@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML- Get and Set CSS Classes</title>
+
+        <!-- include jQuery from CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- jQuery -->
+        <script>
+            $(document).ready(function(){
+
+                $("#btnAddClass").click(function(){
+                    $("h1, h2, p").addClass("green important");
+                });
+
+                $("#btnRemoveGreenClass").click(function(){
+                    $("h1, h2, p").removeClass("green");
+                });
+
+                $("#btnRemoveImportantClass").click(function(){
+                    $("h1, h2, p").removeClass("important");
+                });
+
+                $("#btnToggleClass").click(function(){
+                    $("h1, h2, p").toggleClass("green important");
+                });
+
+                
+              
+            });
+
+        </script>
+
+        <style>
+            .important{
+                font-weight: bold;
+                font-size: xx-large;
+            }
+
+            .green{
+                color: #73AD21;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div>
+                <h1>Heading</h1>
+                <h2>Heading</h2>
+                <p>This is a paragraph</p>
+                <p>This is another paragraph</p>
+                <button id="btnAddClass">Add css classes to elements</button>
+                <button id="btnRemoveGreenClass">Remove green class</button>
+                <button id="btnRemoveImportantClass">Remove important class</button>
+                <button id="btnToggleClass">Toggle Class</button>
+            </div>
+
+
+
+        </div> <!-- end container -->
+    </body>
+</html>

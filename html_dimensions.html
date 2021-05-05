@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML- Dimensions</title>
+
+        <!-- include jQuery from CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- jQuery -->
+        <script>
+            $(document).ready(function(){
+
+                $("#btnDisplayDivDimensions").click(function(){
+                    var txt = "";
+                    txt += "Width: " + $("#div1").width() + "<br>";
+                    txt += "Height: " + $("#div1").height() + "<br>";
+                    txt += "Inner width: " + $("#div1").innerWidth() + "<br>";
+                    txt += "Inner height: " + $("#div1").innerHeight() + "<br>";
+                    txt += "Outer width: " + $("#div1").outerWidth() + "<br>";
+                    txt += "Outer height: " + $("#div1").outerHeight() + "<br>";
+                    txt += "Outer width(true): " + $("#div1").outerWidth(true) + "<br>";
+                    txt += "Outer height(true): " + $("#div1").outerHeight(true);
+
+                    $("#div1").html(txt);
+                });
+
+                $("#btnDisplayDocumentDimensions").click(function(){
+                    var txt = "";
+                    txt += "Document width/ height: " + $(document).width() + " x " + $(document).height() + "\n";
+                    txt += "Window width/ height: " + $(window).width() + " x " + $(window).height();
+
+                    alert(txt);
+                });
+
+                $("#btnChangeDivDimensions500x400").click(function(){
+                    $("#div1").width(500).height(400);
+                });
+
+                $("#btnChangeDivDimensions400x200").click(function(){
+                    $("#div1").width(400).height(200);
+                });
+                                
+              
+            });
+
+        </script>
+
+        <style>
+            #div1{
+                background-color:yellowgreen;
+                border: 5px solid #666;
+                padding: 10px;
+                margin: 10px;
+                width: 400px;
+                height: 200px;
+                color: white;
+                font-size: 1.2em;
+            }
+            
+
+            
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div id="div1"></div>
+            <br>
+            <button id="btnDisplayDivDimensions">Display dimensions of div</button>
+            <button id="btnDisplayDocumentDimensions">Display Document and Window Dimentsions</button>
+            <button id="btnChangeDivDimensions500x400">Div 500x400</button>
+            <button id="btnChangeDivDimensions400x200">Div 400x200</button>
+
+        </div> <!-- end container -->
+    </body>
+</html>

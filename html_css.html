@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML- CSS</title>
+
+        <!-- include jQuery from CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- jQuery -->
+        <script>
+            $(document).ready(function(){
+
+                $("#btnGetBackgroundColor").click(function(){
+                    alert("Background color = " + $("p").css("background-color"));
+                });
+
+                $("#btnSetBackgroundColor").click(function(){
+                    $("p").css("background-color", "sandybrown");
+                });
+
+                $("#btnChangeStyle").click(function(){
+                    $("p").css({"background-color":"orange","font-size":"200%", "color":"white", "padding":"50px", "border-radius":"10px"});
+                });
+
+                
+
+                
+              
+            });
+
+        </script>
+
+        <style>
+            .container{
+                width: 600px;
+                margin: auto;
+            }
+
+            p{
+                padding: 20px;
+                color: white;
+            }
+
+            
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div>
+                <p style="background-color: tomato;">First</p>
+                <p style="background-color: yellowgreen;">Second</p>
+                <p style="background-color: deepskyblue;">Third</p>
+                <button id="btnGetBackgroundColor">Get background color of p</button>
+                <button id="btnSetBackgroundColor">Set background color of p</button>
+                <button id="btnChangeStyle">Change style</button>
+            </div>
+            
+
+
+
+        </div> <!-- end container -->
+    </body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Filters</title>
+
+        <!-- include jQuery from CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- jQuery -->
+        <script>
+            $(document).ready(function(){
+                $("#searchTable").on("keyup", function(){
+                    var searchKey = $(this).val().toLowerCase();
+                    $("#table tr").filter(function(){
+                        $(this).toggle($(this).text().toLowerCase().indexOf(searchKey) > -1);
+                    });
+                });
+
+                $("#searchList").on("keyup", function(){
+                    var searchKey = $(this).val().toLowerCase();
+                    $("#list li").filter(function(){
+                        $(this).toggle($(this).text().toLowerCase().indexOf(searchKey) > -1);
+                    });
+                });
+
+                $("#searchBox").on("keyup", function(){
+                    var searchKey = $(this).val().toLowerCase();
+                    $("#div *").filter(function(){
+                        $(this).toggle($(this).text().toLowerCase().indexOf(searchKey) > -1);
+                    });
+                });
+
+            });
+                      
+
+        </script>
+
+        <style>
+            table{
+                font-family: Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            td, th{
+                border: 1px solid #000;
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even){
+                background-color: #ddd;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+        
+        <div class="container">
+
+            <h2>Filtered Table</h2>
+            <p>Type something to search</p>
+
+            <input id="searchTable" type="text" placeholder="Search..."><br>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+
+                <tbody id="table">
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>Mary</td>
+                        <td>Moe</td>
+                        <td>mary@mail.com</td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@greatstuff.com</td>
+                    </tr>
+                    <tr>
+                        <td>Anja</td>
+                        <td>Ravendale</td>
+                        <td>a_r@test.com</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Note: We start the search in tbody to prevent filtering the table headers.</p>
+
+            <input id="searchList" type="text" placeholder="Search..."><br><br>
+            <ul id="list">
+                <li>Laptop</li>
+                <li>Smartphone</li>
+                <li>Car</li>
+                <li>Furniture</li>
+                <li>Cloth</li>
+            </ul>
+            <br>
+
+            <input id="searchBox" type="text" placeholder="Type to search...">
+
+            <div id="div">
+                <p>Paragraph</p>
+                <div>Another div inside a div</div>
+                <button>Button</button>
+                <button>Also another button</button>
+                <p>Another paragraph</p>
+                <span>Span text</span>
+            </div>
+            
+            
+            
+
+        </div> <!-- end container -->
+
+    </body>
+</html>

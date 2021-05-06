@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery noConflict</title>
+
+        <!-- include jQuery from CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- jQuery -->
+        <script>
+            $.noConflict();
+            jQuery(document).ready(function(){
+                jQuery("button").click(function(){
+                    jQuery("p").text("jQuery is still working");
+                });
+            });            
+
+        </script>
+    </head>
+
+    <body>
+        
+        <div class="container">
+            <p>Click the button below to check if jQuery is still working</p>
+            <button>Check if jQuery is working</button>
+            
+            
+
+        </div> <!-- end container -->
+
+    </body>
+</html>

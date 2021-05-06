@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>AJAX- get() and post()</title>
+
+        <!-- include jQuery from CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- jQuery -->
+        <script>
+            $(document).ready(function(){
+
+                $("#btnGetRequest").click(function(){
+                    $.get(
+                        "external_asp.asp",
+                        function(data, status){
+                            alert("Data: " + data + "\nStatus: " + status);
+                        });
+                });
+
+                $("#btnPostRequest").click(function(){
+                    $.post(
+                        "external_processing.asp",
+                        {
+                            name: "Donald",
+                            city: "New York"
+                        },
+                        function(data, status){
+                            alert("Data: " + data + "\nStatus: " + status);
+                        }
+                    )
+                });
+                
+
+            });
+
+
+
+        </script>
+
+        <style>
+            
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="intro">
+                <ul>
+                    <li>$.get(URL, callback)</li>
+                    <li>$.post(URL, data, callback)</li>
+                </ul>
+            </div>
+
+            <button type="button" id="btnGetRequest">Send an HTTP GET request to page and get the result back</button>
+            <br><br>
+            <button type="button" id="btnPostRequest">Send an HTTP POST request to page and get the result back</button>
+
+
+
+        </div> <!-- end container -->
+
+
+    </body>
+</html>

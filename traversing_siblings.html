@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Traversing- Siblings</title>
+
+        <!-- include jQuery from CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- jQuery -->
+        <script>
+            $(document).ready(function(){
+
+                $("#siblings1 h2").siblings().css({"color":"red","border":"2px solid red"});
+                $("#siblings2 h2").next().css({"color":"green","border":"2px solid green"});
+                $("#siblings3 h2").nextAll().css({"color":"blue","border":"2px solid blue"});
+                $("#siblings4 h2").nextUntil("h6").css({"color":"red","border":"2px solid red"});
+
+            });
+
+
+
+        </script>
+
+        <style>
+            .siblings *{
+                display: block;
+                border: 2px solid lightgrey;
+                color: lightgrey;
+                padding: 5px;
+                margin: 15px;
+            }
+            
+            
+        </style>
+    </head>
+
+    <body>
+        <div class="intro">
+            <ul>
+                <li>siblings()</li>
+                <li>next()</li>
+                <li>nextAll()</li>
+                <li>nextUntil()</li>
+                <li>prev()</li>
+                <li>prevAll()</li>
+                <li>prevUntil()</li>
+            </ul>
+        </div>
+
+        <h3>siblings - Style siblings of h2</h3>
+        <div class="siblings" id="siblings1">
+            <div>
+                div (parent)
+                <p>p</p>
+                <span>span</span>
+                <h2>h2</h2>
+                <h3>h3</h3>
+                <p>p</p>
+            </div>
+        </div> <!-- end siblings -->
+
+        <h3>next - style sibling next to h2</h3>
+        <div class="siblings" id="siblings2">
+            <div>
+                div (parent)
+                <p>p</p>
+                <span>span</span>
+                <h2>h2</h2>
+                <h3>h3</h3>
+                <p>p</p>
+            </div>
+        </div>
+
+        <h3>nextAll - style all siblings next to h2</h3>
+        <div class="siblings" id="siblings3">
+            <div>
+                div (parent)
+                <p>p</p>
+                <span>span</span>
+                <h2>h2</h2>
+                <h3>h3</h3>
+                <p>p</p>
+            </div>
+        </div>
+
+        <h3>nextUntil - style all next siblings of h2 until reach h6</h3>
+        <div class="siblings" id="siblings4">
+            <div>
+                div (parent)
+                <p>p</p>
+                <span>span</span>
+                <h2>h2</h2>
+                <h3>h3</h3>
+                <h4>h4</h4>
+                <h5>h5</h5>
+                <h6>h6</h6>
+                <p>p</p>
+            </div>
+        </div>
+
+            
+
+    </body>
+</html>

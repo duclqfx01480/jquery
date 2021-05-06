@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Traversing- Descendants</title>
+
+        <!-- include jQuery from CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- jQuery -->
+        <script>
+            $(document).ready(function(){
+
+                $(".descendants1").children().css({"color":"red","border":"2px solid red"})
+                $(".descendants2").find("span").css({"color":"green","border":"2px solid green"});
+
+            });
+
+
+
+        </script>
+
+        <style>
+            .descendants1 *, .descendants2 *{
+                display: block;
+                border: 2px solid lightgrey;
+                color: lightgrey;
+                padding: 5px;
+                margin: 15px;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+        <div class="descendants1" style="width: 500px;">
+            -> div (current element) - style children
+            <p>
+                p (child)
+                <span>span (grandchild)</span>
+            </p>
+
+            <p>
+                p (child)
+                <span>span (grandchild)</span>
+            </p>
+        </div>
+
+        <div class="descendants2" style="width: 500px;">
+            -> div (current element) - find span and style it
+            <p>
+                p (child)
+                <span>span (grandchild)</span>
+            </p>
+
+            <p>
+                p (child)
+                <span>span (grandchild)</span>
+            </p>
+        </div>
+            
+
+    </body>
+</html>

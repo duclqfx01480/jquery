@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>AJAX- Load</title>
+
+        <!-- include jQuery from CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- jQuery -->
+        <script>
+            $(document).ready(function(){
+                $("button").click(function(){
+                    $("#div1").load(
+                        "external_text.txt",
+                        function(responseTxt, statusTxt, xhr){
+                            if(statusTxt == "success") {
+                                alert("External content loaded successfully");
+                            }
+                            
+                            if(statusTxt == "error") {
+                                alert("Error: " + xhr.status + "- " + xhr.statusText);
+                            }
+                        });
+                });
+
+            });
+
+
+
+        </script>
+
+        <style>
+            
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="div1">
+                <h2>This text will be changed once you click the button below</h2>
+            </div>
+
+            <button type="button">Get external content</button>
+
+        </div> <!-- end container -->
+
+
+    </body>
+</html>

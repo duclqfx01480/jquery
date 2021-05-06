@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Traversing- Ancestors</title>
+
+        <!-- include jQuery from CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- jQuery -->
+        <script>
+            $(document).ready(function(){
+                
+                $(".span1").parent().css({"color":"red", "border":"2px solid red"});
+                $(".span2").parentsUntil("div").css({"color":"blue","border":"2px dotted blue"});
+
+            });
+
+
+
+        </script>
+
+        <style>
+            .ancestors *{
+                display: block;
+                border: 2px solid lightgrey;
+                color: lightgrey;
+                padding: 5px;
+                margin: 15px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="ancestors">
+                <h1>Use parent</h1>
+                <div style="width: 500px;">
+                    div (great-grandparent)
+                    <ul>
+                        ul (grand-parent)
+                        <li>li (direct parent) <span class="span1">span</span></li>
+                    </ul>
+                </div>
+
+                <div style="width: 500px;">
+                    div (grandparent)
+                    <p>
+                        p (direct parent)
+                        <span class="span1">span</span>
+                    </p>
+                </div>
+
+                <h1>Use parentsUntil</h1>
+
+                <div style="width: 500px;">
+                    div (great-grandparent)
+                    <ul>
+                        ul (grand-parent)
+                        <li>li (direct parent) <span class="span2">span</span></li>
+                    </ul>
+                </div>
+
+                <div style="width: 500px;">
+                    div (grandparent)
+                    <p>
+                        p (direct parent)
+                        <span class="span2">span</span>
+                    </p>
+                </div>
+            </div>
+            
+
+        </div> <!-- end container -->
+
+    </body>
+</html>

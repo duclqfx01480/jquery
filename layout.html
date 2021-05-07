@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Accordion</title>
+
+        <!-- Add icon library - Font Awesome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <script>
+        </script>
+
+        <style>
+
+            /* Icon bar */
+            .icon-bar{
+                width: 100%;
+                background-color: #555;
+                overflow: auto;
+            }
+
+            .icon-bar a{
+                float: left;
+                width: 10%;
+                display: block;
+                text-align: center;
+                padding: 12px 0;
+                transition: all 0.3s ease;
+                color: white;
+                font-size: 36px;
+            }
+
+            .icon-bar a:hover{
+                background-color: #000;
+            }
+
+            .icon-bar .active{
+                background-color: #04AA6D;
+            }
+            /* End Icon bar */
+
+            /* Menu */
+            .menu{
+                display: inline-block;
+                cursor: pointer;
+                padding: 12px 0;
+                width: 10%;
+                float: right;
+            }
+
+            .menu::after{
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            .bar1, .bar2, .bar3{
+                width: 35px;
+                height: 5px;
+                background-color: #fff;
+                margin: 6px 0;
+                transition: 0.4s;
+            }
+                /* rotate first bar */
+                .change .bar1{
+                    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+                    transform: rotate(-45deg) translate(-9px, 6px);
+                }
+
+                .change .bar2{
+                    opacity: 0;
+                }
+
+                .change .bar3{
+                    transform: rotate(45deg) translate(-8px, -8px);
+                    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+                }
+                /* end rotate first bar */
+
+            /* End Menu */
+
+
+            /* Accordion */
+            .accordionWrap{
+                width: 300px;
+
+            }
+            .accordion{
+                background-color: #eee;
+                color: #444;
+                cursor: pointer;
+                padding: 18px;
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 15px;
+                transition: 0.4s;
+            }
+
+            .panel{
+                padding: 0 18px;
+                display: none;
+                background-color: white;
+                overflow: hidden;
+            }
+
+            .active, .accordion:hover{
+                background-color: #ccc;
+
+            }
+
+            /* End Accordion */
+        </style>
+
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div class="icon-bar">
+                <a class="active" href="#"><i class="fa fa-home"></i></a>
+                <a href="#"><i class="fa fa-search"></i></a>
+                <a href="#"><i class="fa fa-envelope"></i></a>
+                <a href="#"><i class="fa fa-globe"></i></a>
+                <a href="#"><i class="fa fa-trash"></i></a>
+
+                <div class="menu" onclick="menuHandle(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+
+            </div>
+
+
+            <!-- Accordion -->
+            <div class="accordionWrap">
+                <button class="accordion">Section 1</button>
+                <div class="panel">
+                    <p>Content of section 1</p>
+                </div>
+
+                <button class="accordion">Section 2</button>
+                <div class="panel">
+                    <p>Content of section 2</p>
+                </div>
+
+                <button class="accordion">Section 3</button>
+                <div class="panel">
+                    <p>Content of section 3</p>
+                </div>
+
+                <button class="accordion">Section 4</button>
+                <div class="panel">
+                    <p>Content of section 4</p>
+                </div>
+
+                <button class="accordion">Section 5</button>
+                <div class="panel">
+                    <p>Content of section 5</p>
+                </div>
+
+            </div> <!-- end accordion -->
+        </div> <!-- end container -->
+
+
+        <script>
+            
+            // Accordion
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for(i=0; i<acc.length; i++){
+                acc[i].addEventListener("click", function(){
+                    this.classList.toggle("active");
+
+                    var panel = this.nextElementSibling;
+
+                    if(panel.style.display === "block"){
+                        panel.style.display = "none";
+                    }
+                    else{
+                        panel.style.display = "block";
+                    }
+                });
+            }
+
+            // Menu
+            function menuHandle(x){
+                x.classList.toggle("change");
+            }
+
+        </script>
+
+    </body>
+</html>

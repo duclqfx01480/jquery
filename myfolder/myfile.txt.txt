@@ -1,0 +1,1 @@
+AJAX works! This text loaded from the server, using jQuery's AJAX methods
